@@ -20,6 +20,7 @@ import {
 import { AuctionView, useAuctions } from '../../hooks';
 import { QUOTE_MINT } from '../../constants';
 import { MintInfo } from '@solana/spl-token';
+import { ChartOptions } from 'chart.js';
 
 const { Content } = Layout;
 export const AnalyticsView = () => {
@@ -237,8 +238,9 @@ const MemoizedBar = React.memo(
         },
       ],
     };
-
-    const histoOptions = {
+    const histoOptions: ChartOptions<any> = {
+    };
+    /*const histoOptions = {
       scales: {
         yAxes: [
           {
@@ -248,7 +250,7 @@ const MemoizedBar = React.memo(
           },
         ],
       },
-    };
+    };*/
 
     return <Bar data={histoData} options={histoOptions} />;
   },
